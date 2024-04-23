@@ -12,3 +12,10 @@ test:
 
 clean:
 	@rm -rf *.o
+
+docs:
+	@rm -rf docs
+	@doxygen Doxyfile
+	@mv html docs
+
+.PHONY: all build run test clean docs

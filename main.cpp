@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Adarsh Das
+ * @brief Main file for the RNA folding visualization using OpenGL
+ * @date 2024-04-23
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <GL/freeglut.h>
 #include <GLFW/glfw3.h>
 
@@ -9,11 +19,20 @@
 
 #include "rna_folding.cpp"
 
+//! @brief Global variables to store the pan speed. User can change using ← and → keys.
 float pan_speed = 0.0f;
+//! @brief Global variables to store the pan offset
 float pan_offset = 0.0f;
+//! @brief Global variables to store the zoom factor. User can change using + and - keys.
 float zoom_factor = 1.0f;
 
-// Function to render text on the screen
+/**
+ * @brief Function to render text on the screen
+ * 
+ * @param x 
+ * @param y 
+ * @param text 
+ */
 void renderText(float x, float y, const std::string& text) {
     glColor3f(1.0f, 1.0f, 1.0f);
     glRasterPos2f(x, y);

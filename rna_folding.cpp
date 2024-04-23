@@ -1,9 +1,19 @@
+/**
+ * @file rna_folding.cpp
+ * @author Adarsh Das
+ * @brief RNA folding algorithm implementation
+ * @date 2024-04-23
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
 
 /**
- * @brief
+ * @brief Function to create the DP matrix for RNA folding
  *
  * @param rna_sequence
  * @return int
@@ -56,6 +66,13 @@ std::vector<std::vector<int>> create_matrix(
     return dp;
 }
 
+/**
+ * @brief Function to calculate number of bonds (theoretical) in the RNA
+ * 
+ * @param rna_sequence 
+ * @param minimal_loop_length 
+ * @return int 
+ */
 int rna_score(const std::string& rna_sequence,
               const int& minimal_loop_length = 0) {
     std::vector<std::vector<int>> dp =
@@ -63,6 +80,15 @@ int rna_score(const std::string& rna_sequence,
     return dp[0][rna_sequence.size() - 1];
 }
 
+/**
+ * @brief Function to traceback DP and get the bonds structure
+ * 
+ * @param nm 
+ * @param rna 
+ * @param fold 
+ * @param i 
+ * @param j 
+ */
 void traceback(const std::vector<std::vector<int>>& nm, const std::string& rna,
                std::vector<std::pair<int, int>>& fold, int i, int j) {
     if (i < j) {
@@ -90,6 +116,13 @@ void traceback(const std::vector<std::vector<int>>& nm, const std::string& rna,
     }
 }
 
+/**
+ * @brief Function to create the dot-bracket notation from the bonds
+ * 
+ * @param rna 
+ * @param fold 
+ * @return std::string 
+ */
 std::string dot_write(const std::string& rna,
                       const std::vector<std::pair<int, int>>& fold) {
     std::string dot(rna.size(), '.');

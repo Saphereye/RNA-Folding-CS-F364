@@ -1,0 +1,20 @@
+/**
+ * \mainpage My Project Documentation
+ * 
+ * \section intro_sec Introduction
+ * 
+ * This project deals with finding the theoretical amount of bonds given an RNA sequence. 
+ * Our program uses the Nussinov algorithm.
+ *
+ * \image html demo.png "Demo of the program" width=80%
+ *
+ * \section comparison Comparison against ground truth
+ * We have got 5 RNA sequences and these are the results ...
+ * 
+ * \section files_sec Files
+ * 
+ * Here are the main files in the project:
+ * 
+ * - \ref main.cpp "main.cpp"
+ * - \ref rna_folding.cpp "rna_folding.cpp"
+ */
