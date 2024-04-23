@@ -168,7 +168,10 @@ int main(int argv, char** argc) {
     // std::ifstream file(
     //     "rna/Homo sapiens (human) ABR antisense RNA 1 (ABR-AS1).rna");
 
-    std::ifstream file("rna/ACA box 91 (SNORA91).rna");
+    // std::ifstream file("rna/ACA box 91 (SNORA91).rna");
+
+    std::ifstream file(
+        "rna/Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1).rna");
 
     // std::ifstream file("rna/Homo sapiens (human) piR-61154.rna");
 
