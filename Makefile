@@ -1,7 +1,7 @@
 all: build run
 
 build:
-	@g++ main.cpp -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -ldl -o main.o
+	@g++ main.cpp -lglfw -lGL -lGLU -lglut -lX11 -lpthread -lXrandr -lXi -ldl -o main.o
 
 run:
 	@./main.o
