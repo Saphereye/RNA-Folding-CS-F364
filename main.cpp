@@ -3,9 +3,9 @@
  * @author Adarsh Das
  * @brief Main file for the RNA folding visualization using OpenGL
  * @date 2024-04-23
- * 
+ *
  * @copyright Copyright (c) 2024
- * 
+ *
  */
 
 #include <GL/freeglut.h>
@@ -19,19 +19,21 @@
 
 #include "rna_folding.cpp"
 
-//! @brief Global variables to store the pan speed. User can change using ← and → keys.
+//! @brief Global variables to store the pan speed. User can change using ← and
+//! → keys.
 float pan_speed = 0.0f;
 //! @brief Global variables to store the pan offset
 float pan_offset = 0.0f;
-//! @brief Global variables to store the zoom factor. User can change using + and - keys.
+//! @brief Global variables to store the zoom factor. User can change using +
+//! and - keys.
 float zoom_factor = 1.0f;
 
 /**
  * @brief Function to render text on the screen
- * 
- * @param x 
- * @param y 
- * @param text 
+ *
+ * @param x
+ * @param y
+ * @param text
  */
 void renderText(float x, float y, const std::string& text) {
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -156,15 +158,19 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action,
     if (action == GLFW_PRESS || action == GLFW_REPEAT) {
         switch (key) {
             case GLFW_KEY_LEFT:
+            case GLFW_KEY_A:
                 pan_speed = 0.05f;
                 break;
             case GLFW_KEY_RIGHT:
+            case GLFW_KEY_D:
                 pan_speed = -0.05f;
                 break;
             case GLFW_KEY_EQUAL:
+            case GLFW_KEY_E:
                 zoom_factor *= 0.9f;
                 break;
             case GLFW_KEY_MINUS:
+            case GLFW_KEY_Q:
                 zoom_factor *= 1.1f;
                 break;
             default:
@@ -172,6 +178,15 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action,
         }
     } else if (action == GLFW_RELEASE) {
         pan_speed = 0.0f;
+    }
+}
+
+// The scroll callback function
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    if (yoffset > 0) {
+        zoom_factor *= 0.9f;  // Zoom in
+    } else if (yoffset < 0) {
+        zoom_factor *= 1.1f;  // Zoom out
     }
 }
 
@@ -236,6 +251,9 @@ int main(int argv, char** argc) {
 
     // Set the keyboard input callback function
     glfwSetKeyCallback(window, key_callback);
+
+    // Set the scroll callback function
+    glfwSetScrollCallback(window, scroll_callback);
 
     // Loop until the user closes the window
     while (!glfwWindowShouldClose(window)) {
