@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "rna_folding.cpp"
 
@@ -130,10 +131,15 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action,
 }
 
 int main(int argv, char** argc) {
-    // std::string rna_sequence =
-    //     "AAUCCCCCGUGCCCAUAGCGGCGUGGAACCACCCGUUCCCAUUCCGAACACGGAAGUGAAACGCGCCAGC"
-    //     "GCCGAUGGUACUGGGCGGGCGACCGCCUGGGAGAGUAGGUCGGUGCGGGGGA";
-    std::string rna_sequence = "GGGAAAUCC";
+    std::ifstream file("rna/Thermus thermophilus 5S rRNA.rna");
+    if (!file) {
+        std::cerr << "Failed to open the file." << std::endl;
+        return -1;
+    }
+
+    // Read the RNA sequence from the file
+    std::string rna_sequence;
+    std::getline(file, rna_sequence);
 
     std::vector<std::pair<int, int>> fold;
     traceback(create_matrix(rna_sequence, 0), rna_sequence, fold, 0,
