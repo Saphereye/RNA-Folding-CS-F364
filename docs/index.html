@@ -65,22 +65,35 @@ $(function() {
 <div class="title">My Project Documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Introduction</h1>
-<p>This project deals with finding the theoretical amount of bonds given an RNA sequence. Our program uses the Nussinov algorithm.</p>
-<div class="image">
-<img src="demo.png" alt="" width="80%"/>
-<div class="caption">
-Demo of the program</div></div>
-<h1><a class="anchor" id="comparison"></a>
+<p>This project deals with finding the theoretical amount of bonds given an RNA sequence.</p>
+<p><img src="demo.png" alt="Demo of the program" style="width:75%;" class="inline"/></p>
+<p>The image demonstrates the visualization of bonds in the RNA using our DP algorithm.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Comparison against ground truth</h1>
-<p>We have got 5 RNA sequences and these are the results ...</p>
-<h1><a class="anchor" id="files_sec"></a>
+<p>We ran the algorithm on 5 sequence, these are the results in comparison with ground truth:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">RNA Name   </th><th class="markdownTableHeadNone">RNA Length   </th><th class="markdownTableHeadNone">Our algorithm (min loop len: 0)   </th><th class="markdownTableHeadNone">Our algorithm (min loop len: 5)   </th><th class="markdownTableHeadNone">Ground truth    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Homo sapiens (human) small nucleolar RNA, H/ACA box 91 (SNORA91)   </td><td class="markdownTableBodyNone">178   </td><td class="markdownTableBodyNone">76   </td><td class="markdownTableBodyNone">64   </td><td class="markdownTableBodyNone">59    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Homo sapiens (human) ABR antisense RNA 1 (ABR-AS1)   </td><td class="markdownTableBodyNone">994   </td><td class="markdownTableBodyNone">439   </td><td class="markdownTableBodyNone">364   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Homo sapiens (human) piR-61154   </td><td class="markdownTableBodyNone">26   </td><td class="markdownTableBodyNone">9   </td><td class="markdownTableBodyNone">8   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)   </td><td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">41   </td><td class="markdownTableBodyNone">37   </td><td class="markdownTableBodyNone">23    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Thermus thermophilus 5S rRNA   </td><td class="markdownTableBodyNone">122   </td><td class="markdownTableBodyNone">53   </td><td class="markdownTableBodyNone">44   </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Files</h1>
 <p>Here are the main files in the project:</p>
 <ul>
-<li><a class="el" href="main_8cpp.html">main.cpp</a></li>
-<li><a class="el" href="rna__folding_8cpp.html">rna_folding.cpp</a> </li>
+<li><a href="main.cpp">main.cpp</a></li>
+<li><a href="rna_folding.cpp">rna_folding.cpp</a> </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
