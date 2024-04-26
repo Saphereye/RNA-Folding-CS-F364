@@ -1,303 +1,230 @@
-/**
- * @file main.cpp
- * @author Adarsh Das
- * @brief Main file for the RNA folding visualization using OpenGL
- * @date 2024-04-23
- *
- * @copyright Copyright (c) 2024
- *
- */
-
+#include <GL/glew.h>
 #include <GL/freeglut.h>
-#include <GLFW/glfw3.h>
 
-#include <cmath>
-#include <fstream>
 #include <iostream>
-#include <string>
-#include <vector>
 
-#include "rna_folding.cpp"
+#include "rna_folding.hh"
+#include "herrlog.hh"
 
-//! @brief Global variables to store the pan speed. User can change using ← and
-//! → keys.
-float pan_speed = 0.0f;
-//! @brief Global variables to store the pan offset
-float pan_offset = 0.0f;
-//! @brief Global variables to store the zoom factor. User can change using +
-//! and - keys.
-float zoom_factor = 1.0f;
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
-/**
- * @brief Function to render text on the screen
- *
- * @param x
- * @param y
- * @param text
- */
-void renderText(float x, float y, const std::string& text) {
-    glColor3f(1.0f, 1.0f, 1.0f);
+// Global variables to store the RNA information
+const std::string rna_name =
+    // "Homo sapiens (human) piR-61154";
+    // "Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)";
+    "Thermus thermophilus 5S rRNA";
+// "Murari";
+int number_of_nucleotides =
+    0;  // Update this value when you read the RNA sequence
+int number_of_bonds =
+    0;  // Update this value when you calculate the RNA folding
+
+// Function to draw text
+void drawText(const char* text, float x, float y) {
     glRasterPos2f(x, y);
-    for (char c : text) {
-        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
+    for (const char* c = text; *c != '\0'; c++) {
+        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
     }
 }
 
-void drawRNADots(const std::string& rna_sequence) {
-    // Calculate the spacing between dots based on the window size and RNA
-    // sequence length
-    float dot_spacing = 0.1f / zoom_factor;
-    float start_x = -1.0f + pan_offset;
+// Global variable to store the texture
+GLuint texture;
 
-    // Arrays to store dot positions and colors
-    std::vector<float> dot_positions;
-    std::vector<float> dot_colors;
+// Function to load texture from file
+void loadTexture(const char* filename) {
+    // Check maximum texture size
+    GLint maxTextureSize;
+    glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
 
-    // Generate dot positions and colors
-    for (size_t i = 0; i < rna_sequence.size(); ++i) {
-        // Calculate the x-coordinate for the dot
-        float x = start_x + dot_spacing * (i + 1);
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
 
-        // Store dot position
-        dot_positions.push_back(x);
-        dot_positions.push_back(-0.8f);
+    // Set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-        // Set the color based on the nucleotide
-        switch (rna_sequence[i]) {
-            case 'A':
-                dot_colors.push_back(1.0f);  // Red
-                dot_colors.push_back(0.0f);
-                dot_colors.push_back(0.0f);
-                break;
-            case 'U':
-                dot_colors.push_back(0.0f);  // Green
-                dot_colors.push_back(1.0f);
-                dot_colors.push_back(0.0f);
-                break;
-            case 'G':
-                dot_colors.push_back(0.0f);  // Blue
-                dot_colors.push_back(0.0f);
-                dot_colors.push_back(1.0f);
-                break;
-            case 'C':
-                dot_colors.push_back(1.0f);  // Yellow
-                dot_colors.push_back(1.0f);
-                dot_colors.push_back(0.0f);
-                break;
-            default:
-                dot_colors.push_back(0.5f);  // Gray for wrong nucleotide
-                dot_colors.push_back(0.5f);
-                dot_colors.push_back(0.5f);
-                break;
-        }
+    // Adjust texture filtering mode
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                    GL_NEAREST);  // Try GL_NEAREST
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,
+                    GL_NEAREST);  // Try GL_NEAREST
+
+    // Load texture image
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load(filename, &width, &height, &nrChannels, 0);
+    Logger::info("Trying to load texture of size: {}x{}", width, height);
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA,
+                     GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    } else {
+        Logger::warn("Failed to load texture: {}", filename);
     }
-
-    // Draw the dots
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-    glVertexPointer(2, GL_FLOAT, 0, dot_positions.data());
-    glColorPointer(3, GL_FLOAT, 0, dot_colors.data());
-    glPointSize(10.0f);
-    glDrawArrays(GL_POINTS, 0, rna_sequence.size());
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
-
-    // Render nucleotide names below the dots
-    if (zoom_factor <= 7.0f) {
-        for (size_t i = 0; i < rna_sequence.size(); ++i) {
-            float x = start_x + dot_spacing * (i + 1);
-            std::string nucleotide_name = std::string(1, rna_sequence[i]);
-            renderText(x - 0.0075f, -0.9f, nucleotide_name);
-        }
-    }
-
-    // Debug information: Number of nucleotides
-    std::string nucleotide_count =
-        "Nucleotides: " + std::to_string(rna_sequence.size());
-    renderText(-0.9f, 0.9f, nucleotide_count);
+    stbi_image_free(data);
 }
 
-void drawRNABonds(const std::vector<std::pair<int, int>>& traceback,
-                  const std::string& rna_sequence) {
-    // Set the color for all bonds
-    glColor3f(1.0f, 1.0f, 1.0f);  // White color bonds
+// Global variables to store the pan offset
+float pan_x = 0.0f;
+float pan_y = 0.0f;
 
-    // Calculate the spacing between dots based on the window size and RNA
-    // sequence length
-    // float dot_spacing = 2.0f / static_cast<float>(rna_sequence.size() + 1);
-    float dot_spacing = 0.1f / zoom_factor;
-    float start_x = -1.0f + pan_offset;
+// Global variable to store the zoom level
+float zoom = 1.0f;
 
-    // Start drawing the arcs
-    for (const auto& bond : traceback) {
-        // Calculate the x-coordinates for the dots
-        float x1 = start_x + dot_spacing * (bond.first + 1);
-        float x2 = start_x + dot_spacing * (bond.second + 1);
+// Function to draw textured quad
+void drawTexturedQuad() {
+    glPushMatrix();  // Save the current transformation
+    // Apply the pan transformation
+    glTranslatef(pan_x, pan_y, 0.0f);
+    glScalef(zoom, zoom, 1.0f);
 
-        // Calculate the center and radius of the arc
-        float center_x = (x1 + x2) / 2.0f;
-        float radius = std::abs(x1 - x2) / 2.0f;
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0f, 1.0f);  // Flip the y-coordinate
+    glVertex2f(-1.0f, -1.0f);
+    glTexCoord2f(1.0f, 1.0f);  // Flip the y-coordinate
+    glVertex2f(1.0f, -1.0f);
+    glTexCoord2f(1.0f, 0.0f);  // Flip the y-coordinate
+    glVertex2f(1.0f, 1.0f);
+    glTexCoord2f(0.0f, 0.0f);  // Flip the y-coordinate
+    glVertex2f(-1.0f, 1.0f);
+    glEnd();
 
-        // Draw the arc
-        glBegin(GL_LINE_STRIP);
-        for (float angle = 0.0f; angle <= 3.14159f; angle += 0.01f) {
-            float x = center_x + radius * std::cos(angle);
-            float y = radius * std::sin(angle) - 0.8f;
-            glVertex2f(x, y);
-        }
-        glEnd();
-    }
-
-    // Debug information: Number of bonds
-    std::string bond_count = "Bonds: " + std::to_string(traceback.size());
-    renderText(-0.9f, 0.8f, bond_count);
+    glPopMatrix();  // Restore the previous transformation
 }
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action,
-                  int mods) {
-    if (action == GLFW_PRESS || action == GLFW_REPEAT) {
-        switch (key) {
-            case GLFW_KEY_LEFT:
-            case GLFW_KEY_A:
-                pan_speed = 0.05f;
-                break;
-            case GLFW_KEY_RIGHT:
-            case GLFW_KEY_D:
-                pan_speed = -0.05f;
-                break;
-            case GLFW_KEY_EQUAL:
-            case GLFW_KEY_E:
-                zoom_factor *= 0.9f;
-                break;
-            case GLFW_KEY_MINUS:
-            case GLFW_KEY_Q:
-                zoom_factor *= 1.1f;
-                break;
-            default:
-                break;
-        }
-    } else if (action == GLFW_RELEASE) {
-        pan_speed = 0.0f;
-    }
+// Array to track the state of each key
+bool keys[256] = {false};
+
+// Callback function for keyboard input
+void keyboardDown(unsigned char key, int x, int y) { keys[key] = true; }
+
+// Callback function for keyboard input
+void keyboardUp(unsigned char key, int x, int y) { keys[key] = false; }
+
+// Function to update the state of the program based on the state of the keys
+void update() {
+    if (keys['w']) pan_y -= 0.05f;
+    if (keys['s']) pan_y += 0.05f;
+    if (keys['a']) pan_x += 0.05f;
+    if (keys['d']) pan_x -= 0.05f;
+    if (keys['e']) zoom *= 1.1f;
+    if (keys['q']) zoom *= 0.9f;
+    if (keys[27]) glutLeaveMainLoop();  // Escape key
+
+    // Redraw the scene
+    glutPostRedisplay();
 }
 
-// The scroll callback function
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-    if (yoffset > 0) {
-        zoom_factor *= 0.9f;  // Zoom in
-    } else if (yoffset < 0) {
-        zoom_factor *= 1.1f;  // Zoom out
-    }
-}
-
-// The framebuffer size callback function
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    // Set the viewport to cover the new window
+// Callback function for window resizing
+void reshape(int width, int height) {
     glViewport(0, 0, width, height);
+
+    // Calculate the aspect ratio of the window
+    float aspect = (float)width / (float)height;
+
+    // Set the projection matrix
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    if (width >= height) {
+        // Window is wider than it is tall, so extend the x-coordinate range
+        gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
+    } else {
+        // Window is taller than it is wide, so extend the y-coordinate range
+        gluOrtho2D(-1.0, 1.0, -1.0 / aspect, 1.0 / aspect);
+    }
+
+    // Switch back to the modelview matrix
+    glMatrixMode(GL_MODELVIEW);
 }
 
-int main(int argv, char** argc) {
-    // std::ifstream file("rna/Thermus thermophilus 5S rRNA.rna");
+// Callback function for rendering
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture);
 
-    // std::ifstream file(
-    //     "rna/Homo sapiens (human) ABR antisense RNA 1 (ABR-AS1).rna");
+    // Draw the textured quad
+    drawTexturedQuad();
 
-    // std::ifstream file("rna/ACA box 91 (SNORA91).rna");
+    // Draw the RNA information
+    glDisable(GL_TEXTURE_2D);
+    glColor3f(1.0f, 1.0f, 1.0f);  // Set the text color to white
+    drawText(("Current RNA: " + rna_name).c_str(), -1.0f, 0.9f);
+    drawText(("Number of nucleotides: " + std::to_string(number_of_nucleotides))
+                 .c_str(),
+             -1.0f, 0.85f);
+    drawText(("Number of bonds: " + std::to_string(number_of_bonds)).c_str(),
+             -1.0f, 0.8f);
 
-    std::ifstream file(
-        "rna/Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1).rna");
+    drawText("Controls:", -1.0f, 0.7f);
+    drawText(("(x, y): " + std::to_string(pan_x) + ", " + std::to_string(pan_y)).c_str(), -1.0f, 0.65f);
+    drawText(("Zoom: " + std::to_string(zoom)).c_str(), -1.0f, 0.6f);
 
-    // std::ifstream file("rna/Homo sapiens (human) piR-61154.rna");
+    glDisable(GL_TEXTURE_2D);
+    glutSwapBuffers();
+}
+
+int main(int argc, char** argv) {
+    std::ifstream file("rna/" + rna_name + ".rna");
 
     if (!file) {
-        std::cerr << "Failed to open the file." << std::endl;
-        return -1;
+        Logger::error("Failed to open the file.");
     }
 
     // Read the RNA sequence from the file
     std::string rna_sequence;
     std::getline(file, rna_sequence);
+    number_of_nucleotides = rna_sequence.size();
+    const int minimal_loop_length = 4;
 
     std::vector<std::pair<int, int>> fold;
-    traceback(create_matrix(rna_sequence, 0), rna_sequence, fold, 0,
-              rna_sequence.size() - 1);
+    traceback(create_matrix(rna_sequence, minimal_loop_length), rna_sequence,
+              fold, 0, rna_sequence.size() - 1);
 
     std::string dot_notation = dot_write(rna_sequence, fold);
-    std::cout << rna_sequence << std::endl;
-    std::cout << dot_notation << std::endl;
+    // Count the number of bonds in the RNA sequence
+    number_of_bonds = rna_score(rna_sequence, minimal_loop_length);
+    Logger::info("Input RNA sequence: {}", rna_sequence);
+    Logger::info("Dot-bracket notation: {}", dot_notation);
+    Logger::info("Total number of nucleotides: {}", rna_sequence.size());
+    Logger::info("Total number of bonds: {}", number_of_bonds);
+    Logger::info("Creating the image ...");
+    dot_bracket_to_dot(rna_sequence, dot_notation);
+    Logger::info("Image created successfully.");
+    Logger::info("Creating graphics ...");
 
-    // Initialize GLFW
-    if (!glfwInit()) {
-        std::cerr << "Failed to initialize GLFW" << std::endl;
+    // Initialize GLUT
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("OpenGL Image Display");
+    glutFullScreen();
+
+    // Initialize GLEW
+    GLenum err = glewInit();
+    if (err != GLEW_OK) {
+        Logger::error("Failed to initialize GLEW: {}", glewGetErrorString(err));
         return -1;
     }
 
-    glutInit(&argv, argc);
+    // Load the texture
+    loadTexture("rna.png");
 
-    // Create a windowed mode window and its OpenGL context
-    GLFWwindow* window = glfwCreateWindow(
-        800, 600, "RNA Sequence Visualization", glfwGetPrimaryMonitor(), NULL);
-    if (!window) {
-        glfwTerminate();
-        std::cerr << "Failed to create GLFW window" << std::endl;
-        return -1;
-    }
+    // Register callback functions
+    glutKeyboardFunc(keyboardDown);
+    glutKeyboardUpFunc(keyboardUp);
+    glutIdleFunc(update);
+    glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
 
-    // Set the framebuffer size callback function
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    // Set clear color
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glutSwapBuffers();
 
-    // Make the window's context current
-    glfwMakeContextCurrent(window);
+    // Enter the GLUT event loop
+    glutMainLoop();
 
-    // Set the keyboard input callback function
-    glfwSetKeyCallback(window, key_callback);
-
-    // Set the scroll callback function
-    glfwSetScrollCallback(window, scroll_callback);
-
-    // Loop until the user closes the window
-    while (!glfwWindowShouldClose(window)) {
-        // Handle panning
-        if (pan_speed != 0.0f) {
-            pan_offset += pan_speed;
-        }
-
-        // Render here
-        glClear(GL_COLOR_BUFFER_BIT);  // Clear the color buffer
-
-        // Render the text
-        // renderText(-1.0f, -0.95f,
-        //            "RNA folding simulation, made in CPP and OpenGL 4.0");
-
-        // Set up the coordinate system
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-
-        // Draw the RNA bonds
-        drawRNABonds(fold, rna_sequence);
-
-        // Draw the RNA dots
-        drawRNADots(rna_sequence);
-
-        // Render debug information
-        std::string zoom_info = "Zoom: " + std::to_string(zoom_factor);
-        renderText(-0.9f, 0.7f, zoom_info);
-
-        std::string offset_info = "Offset: " + std::to_string(pan_offset);
-        renderText(-0.9f, 0.6f, offset_info);
-
-        // Swap front and back buffers
-        glfwSwapBuffers(window);
-
-        // Poll for and process events
-        glfwPollEvents();
-    }
-
-    // Terminate GLFW
-    glfwTerminate();
-
+    Logger::info("Exiting program");
     return 0;
 }

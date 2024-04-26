@@ -1,7 +1,10 @@
+CXX = g++
+CXXFLAGS = -lglfw -lGL -lGLU -lglut -lX11 -lpthread -lXrandr -lXi -ldl -lGLEW -lGLU -lGL -lglut -lm -std=c++20
+
 all: build run
 
 build:
-	@g++ main.cpp -lglfw -lGL -lGLU -lglut -lX11 -lpthread -lXrandr -lXi -ldl -o main.o
+	@$(CXX) main.cpp $(CXXFLAGS) -o main.o 
 
 run:
 	@./main.o

@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 /**
  * @brief Function to create the DP matrix for RNA folding
@@ -133,4 +134,47 @@ std::string dot_write(const std::string& rna,
     }
 
     return dot;
+}
+
+void dot_bracket_to_dot(const std::string& sequence, const std::string& structure) {
+    std::string dot = "graph RNA {\n";
+    dot += "  bgcolor=\"transparent\";\n"; // Set the background color to transparent
+    dot += "  splines=polyline;\n"; // Use polyline splines for edges
+    dot += "  overlap=scale;\n"; // Use Voronoi-based technique to remove node overlaps
+    dot += "  size=\"50,50\";\n"; // Limit the size of the output image to 5x5 inches
+    for (size_t i = 0; i < sequence.size(); ++i) {
+        std::string color;
+        switch (sequence[i]) {
+            case 'A': color = "red"; break;
+            case 'C': color = "blue"; break;
+            case 'G': color = "green"; break;
+            case 'U': color = "yellow"; break;
+        }
+        dot += "  " + std::to_string(i) + " [label=\"" + sequence[i] + "\", fontcolor=\"black\", fillcolor=\"" + color + "\", style=filled];\n";
+        if (i > 0) { // Add an edge between consecutive bases
+            dot += "  " + std::to_string(i - 1) + " -- " + std::to_string(i) + " [color=white, penwidth=10.0];\n";
+        }
+    }
+    std::vector<int> stack;
+    for (size_t i = 0; i < structure.size(); ++i) {
+        if (structure[i] == '(') {
+            stack.push_back(i);
+        } else if (structure[i] == ')') {
+            int j = stack.back();
+            stack.pop_back();
+            dot += "  " + std::to_string(j) + " -- " + std::to_string(i) + " [color=lightgrey, penwidth=10.0];\n";
+        }
+    }
+    dot += "}\n";
+
+    // Write the DOT script to a file
+    std::ofstream file("rna.dot");
+    file << dot;
+    file.close();
+
+    // Run the neato program to generate a plot of the graph
+    int result = system("neato -Tpng rna.dot -o rna.png");
+    if (result != 0) {
+        std::cerr << "Failed to run the neato program." << std::endl;
+    }
 }
