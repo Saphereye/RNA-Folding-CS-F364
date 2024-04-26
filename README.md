@@ -24,5 +24,5 @@ We ran the algorithm on 5 sequence, these are the results in comparison with gro
 
 Here are the main files in the project:
 
-- [main.cpp](main.cpp)
-- [rna_folding.cpp](rna_folding.cpp)
+- [main.cpp](main_8cpp.html)
+- [rna_folding.cpp](rna_folding_8cpp.html)
