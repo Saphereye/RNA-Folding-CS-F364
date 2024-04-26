@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RNA Folding simulation: rna_folding.cpp File Reference</title>
+<title>RNA Folding simulation: rna_folding.hh File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">rna_folding.cpp File Reference</div>  </div>
+<div class="title">rna_folding.hh File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -73,31 +73,48 @@ $(function() {
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for rna_folding.cpp:</div>
+Include dependency graph for rna_folding.hh:</div>
 <div class="dyncontent">
-<div class="center"><img src="rna__folding_8cpp__incl.png" border="0" usemap="#arna__folding_8cpp" alt=""/></div>
+<div class="center"><img src="rna__folding_8hh__incl.png" border="0" usemap="#arna__folding_8hh" alt=""/></div>
+<map name="arna__folding_8hh" id="arna__folding_8hh">
+<area shape="rect" title="RNA folding algorithm implementation." alt="" coords="145,5,260,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,91,107"/>
+<area shape="rect" title=" " alt="" coords="115,80,195,107"/>
+<area shape="rect" title=" " alt="" coords="219,80,282,107"/>
+<area shape="rect" title=" " alt="" coords="306,80,379,107"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="rna__folding_8cpp__dep__incl.png" border="0" usemap="#arna__folding_8cppdep" alt=""/></div>
+<div class="center"><img src="rna__folding_8hh__dep__incl.png" border="0" usemap="#arna__folding_8hhdep" alt=""/></div>
+<map name="arna__folding_8hhdep" id="arna__folding_8hhdep">
+<area shape="rect" title="RNA folding algorithm implementation." alt="" coords="5,5,120,32"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="21,80,104,107"/>
+</map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="rna__folding_8hh_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a25431442988849366a97e49ff36268c1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8cpp.html#a25431442988849366a97e49ff36268c1">create_matrix</a> (const std::string &amp;rna_sequence, const int &amp;minimal_loop_length=0)</td></tr>
-<tr class="memdesc:a25431442988849366a97e49ff36268c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the DP matrix for RNA folding.  <a href="rna__folding_8cpp.html#a25431442988849366a97e49ff36268c1">More...</a><br /></td></tr>
+<tr class="memitem:a25431442988849366a97e49ff36268c1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8hh.html#a25431442988849366a97e49ff36268c1">create_matrix</a> (const std::string &amp;rna_sequence, const int &amp;minimal_loop_length=0)</td></tr>
+<tr class="memdesc:a25431442988849366a97e49ff36268c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the DP matrix for RNA folding.  <a href="rna__folding_8hh.html#a25431442988849366a97e49ff36268c1">More...</a><br /></td></tr>
 <tr class="separator:a25431442988849366a97e49ff36268c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba728743d99665e2f0537fecf490fee4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8cpp.html#aba728743d99665e2f0537fecf490fee4">rna_score</a> (const std::string &amp;rna_sequence, const int &amp;minimal_loop_length=0)</td></tr>
-<tr class="memdesc:aba728743d99665e2f0537fecf490fee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to calculate number of bonds (theoretical) in the RNA.  <a href="rna__folding_8cpp.html#aba728743d99665e2f0537fecf490fee4">More...</a><br /></td></tr>
+<tr class="memitem:aba728743d99665e2f0537fecf490fee4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8hh.html#aba728743d99665e2f0537fecf490fee4">rna_score</a> (const std::string &amp;rna_sequence, const int &amp;minimal_loop_length=0)</td></tr>
+<tr class="memdesc:aba728743d99665e2f0537fecf490fee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to calculate number of bonds (theoretical) in the RNA.  <a href="rna__folding_8hh.html#aba728743d99665e2f0537fecf490fee4">More...</a><br /></td></tr>
 <tr class="separator:aba728743d99665e2f0537fecf490fee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b648f779f9d30470af268c20df13bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8cpp.html#a43b648f779f9d30470af268c20df13bf">traceback</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;nm, const std::string &amp;rna, std::vector&lt; std::pair&lt; int, int &gt;&gt; &amp;fold, int i, int j)</td></tr>
-<tr class="memdesc:a43b648f779f9d30470af268c20df13bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to traceback DP and get the bonds structure.  <a href="rna__folding_8cpp.html#a43b648f779f9d30470af268c20df13bf">More...</a><br /></td></tr>
+<tr class="memitem:a43b648f779f9d30470af268c20df13bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8hh.html#a43b648f779f9d30470af268c20df13bf">traceback</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;nm, const std::string &amp;rna, std::vector&lt; std::pair&lt; int, int &gt;&gt; &amp;fold, int i, int j)</td></tr>
+<tr class="memdesc:a43b648f779f9d30470af268c20df13bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to traceback DP and get the bonds structure.  <a href="rna__folding_8hh.html#a43b648f779f9d30470af268c20df13bf">More...</a><br /></td></tr>
 <tr class="separator:a43b648f779f9d30470af268c20df13bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc30b957a7bd4225ca8ac23b67e6892"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8cpp.html#a2bc30b957a7bd4225ca8ac23b67e6892">dot_write</a> (const std::string &amp;rna, const std::vector&lt; std::pair&lt; int, int &gt;&gt; &amp;fold)</td></tr>
-<tr class="memdesc:a2bc30b957a7bd4225ca8ac23b67e6892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the dot-bracket notation from the bonds.  <a href="rna__folding_8cpp.html#a2bc30b957a7bd4225ca8ac23b67e6892">More...</a><br /></td></tr>
+<tr class="memitem:a2bc30b957a7bd4225ca8ac23b67e6892"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8hh.html#a2bc30b957a7bd4225ca8ac23b67e6892">dot_write</a> (const std::string &amp;rna, const std::vector&lt; std::pair&lt; int, int &gt;&gt; &amp;fold)</td></tr>
+<tr class="memdesc:a2bc30b957a7bd4225ca8ac23b67e6892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to create the dot-bracket notation from the bonds.  <a href="rna__folding_8hh.html#a2bc30b957a7bd4225ca8ac23b67e6892">More...</a><br /></td></tr>
 <tr class="separator:a2bc30b957a7bd4225ca8ac23b67e6892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab20ba9797d4bad3c1afe969ad923fe67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rna__folding_8hh.html#ab20ba9797d4bad3c1afe969ad923fe67">dot_bracket_to_dot</a> (const std::string &amp;sequence, const std::string &amp;structure)</td></tr>
+<tr class="memdesc:ab20ba9797d4bad3c1afe969ad923fe67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a DOT script from the RNA sequence and structure and calls graphviz.  <a href="rna__folding_8hh.html#ab20ba9797d4bad3c1afe969ad923fe67">More...</a><br /></td></tr>
+<tr class="separator:ab20ba9797d4bad3c1afe969ad923fe67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RNA folding algorithm implementation. </p>
@@ -147,6 +164,43 @@ Functions</h2></td></tr>
 <li><a href="https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov">https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov</a></li>
 <li><a href="https://bayesianneuron.com/2019/02/nussinov-predict-2nd-rna-fold-structure-algorithm/">https://bayesianneuron.com/2019/02/nussinov-predict-2nd-rna-fold-structure-algorithm/</a> </li>
 </ul>
+
+</div>
+</div>
+<a id="ab20ba9797d4bad3c1afe969ad923fe67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20ba9797d4bad3c1afe969ad923fe67">&#9670;&nbsp;</a></span>dot_bracket_to_dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dot_bracket_to_dot </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sequence</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>structure</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a DOT script from the RNA sequence and structure and calls graphviz. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sequence</td><td></td></tr>
+    <tr><td class="paramname">structure</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

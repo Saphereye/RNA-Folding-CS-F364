@@ -4,7 +4,7 @@
 
 This project deals with finding the theoretical amount of bonds given an RNA sequence.
 
-<img src="demo.png" alt="Demo of the program" style="width:75%;">
+<img src="demo.png" alt="Demo of the program" style="width:25%;">
 
 The image demonstrates the visualization of bonds in the RNA using our DP algorithm.
 
@@ -25,4 +25,4 @@ We ran the algorithm on 5 sequence, these are the results in comparison with gro
 Here are the main files in the project:
 
 - [main.cpp](main_8cpp.html)
-- [rna_folding.cpp](rna_folding_8cpp.html)
+- [rna_folding.cpp](rna__folding_8hh.html)

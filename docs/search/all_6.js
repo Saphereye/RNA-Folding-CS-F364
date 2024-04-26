@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zoom_5ffactor_10',['zoom_factor',['../main_8cpp.html#a569f795ebcbf173eb8577b42605e7b94',1,'main.cpp']]]
+  ['info_8',['info',['../classLogger.html#a1853eebd8acf02e28404907dbe8ac920',1,'Logger']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dot_5fwrite_1',['dot_write',['../rna__folding_8cpp.html#a2bc30b957a7bd4225ca8ac23b67e6892',1,'rna_folding.cpp']]]
+  ['create_5fmatrix_1',['create_matrix',['../rna__folding_8hh.html#a25431442988849366a97e49ff36268c1',1,'rna_folding.hh']]]
 ];

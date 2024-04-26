@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @author Adarsh Das (saphereye.github.io)
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
@@ -11,9 +19,9 @@
 
 // Global variables to store the RNA information
 const std::string rna_name =
-    // "Homo sapiens (human) piR-61154";
+    "Homo sapiens (human) piR-61154";
     // "Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)";
-    "Thermus thermophilus 5S rRNA";
+    // "Thermus thermophilus 5S rRNA";
 // "Murari";
 int number_of_nucleotides =
     0;  // Update this value when you read the RNA sequence

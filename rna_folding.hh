@@ -1,5 +1,5 @@
 /**
- * @file rna_folding.cpp
+ * @file rna_folding.hh
  * @author Adarsh Das
  * @brief RNA folding algorithm implementation
  * @date 2024-04-23
@@ -136,6 +136,12 @@ std::string dot_write(const std::string& rna,
     return dot;
 }
 
+/**
+ * @brief Creates a DOT script from the RNA sequence and structure and calls graphviz
+ * 
+ * @param sequence 
+ * @param structure 
+ */
 void dot_bracket_to_dot(const std::string& sequence, const std::string& structure) {
     std::string dot = "graph RNA {\n";
     dot += "  bgcolor=\"transparent\";\n"; // Set the background color to transparent

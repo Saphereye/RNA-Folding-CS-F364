@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['traceback_17',['traceback',['../rna__folding_8cpp.html#a43b648f779f9d30470af268c20df13bf',1,'rna_folding.cpp']]]
+  ['fatal_38',['fatal',['../classLogger.html#a7ece40aad10c27b720d334f375f04680',1,'Logger']]]
 ];
