@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['my_20project_20documentation_52',['My Project Documentation',['../index.html',1,'']]]
+  ['rna_20folding_20simulation_52',['RNA Folding simulation',['../index.html',1,'']]]
 ];

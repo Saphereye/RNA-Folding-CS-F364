@@ -1,6 +1,6 @@
 /**
  * @file rna_folding.hh
- * @author Adarsh Das
+ * @author Adarsh Das (saphereye.github.io)
  * @brief RNA folding algorithm implementation
  * @date 2024-04-23
  * 
@@ -47,7 +47,7 @@ std::vector<std::vector<int>> create_matrix(
             }
         }
     }
-    
+
     return dp;
 }
 

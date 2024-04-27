@@ -1,4 +1,4 @@
-# My Project Documentation
+# RNA Folding simulation
 
 ## Introduction
 
