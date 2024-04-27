@@ -18,15 +18,6 @@
  *
  * @param rna_sequence
  * @return int
- *
- * Resources used
- * - https://www.youtube.com/watch?v=hwhLBfA3mgY
- * - https://en.wikipedia.org/wiki/Nussinov_algorithm
- * - https://github.com/ShanSabri/SSFold/blob/master/writeup/wqe.pdf
- * - https://www.cs.cmu.edu/~02710/Lectures/RNALecture2015.pdf
- * - https://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Nussinov
- * -
- * https://bayesianneuron.com/2019/02/nussinov-predict-2nd-rna-fold-structure-algorithm/
  */
 std::vector<std::vector<int>> create_matrix(
     const std::string& rna_sequence, const int& minimal_loop_length = 0) {
@@ -56,14 +47,7 @@ std::vector<std::vector<int>> create_matrix(
             }
         }
     }
-
-    // for (int i = 0; i < rna_sequence.size(); i++) {
-    //     for (int j = 0; j < rna_sequence.size(); j++) {
-    //         std::cout << dp[i][j] << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
-
+    
     return dp;
 }
 

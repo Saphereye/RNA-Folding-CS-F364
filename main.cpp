@@ -1,9 +1,9 @@
 /**
  * @file main.cpp
  * @author Adarsh Das (saphereye.github.io)
- * 
+ *
  * @copyright Copyright (c) 2024
- * 
+ *
  */
 
 #include <GL/glew.h>
@@ -19,10 +19,14 @@
 
 // Global variables to store the RNA information
 const std::string rna_name =
-    "Homo sapiens (human) piR-61154";
     // "Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)";
-    // "Thermus thermophilus 5S rRNA";
+    "ACA box 91 (SNORA91)";
+// "Homo sapiens (human) small nucleolar RNA (SNORD43)";
+// "Homo sapiens (human) microRNA hsa-mir-921 precursor";
+// "Homo sapiens U7 small nuclear RNA";
+// "Homo sapiens (human) small nucleolar RNA (SNORA81)";
 // "Murari";
+// "Vansh";
 int number_of_nucleotides =
     0;  // Update this value when you read the RNA sequence
 int number_of_bonds =
@@ -38,6 +42,9 @@ void drawText(const char* text, float x, float y) {
 
 // Global variable to store the texture
 GLuint texture;
+
+// Global variables to store the texture size
+int textureWidth, textureHeight;
 
 // Function to load texture from file
 void loadTexture(const char* filename) {
@@ -61,6 +68,8 @@ void loadTexture(const char* filename) {
     // Load texture image
     int width, height, nrChannels;
     unsigned char* data = stbi_load(filename, &width, &height, &nrChannels, 0);
+    textureWidth = width;
+    textureHeight = height;
     Logger::info("Trying to load texture of size: {}x{}", width, height);
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA,
@@ -86,15 +95,19 @@ void drawTexturedQuad() {
     glTranslatef(pan_x, pan_y, 0.0f);
     glScalef(zoom, zoom, 1.0f);
 
+    float aspectRatio =
+        static_cast<float>(textureWidth) / static_cast<float>(textureHeight);
+    float halfWidth = aspectRatio / 2.0f;
+
     glBegin(GL_QUADS);
     glTexCoord2f(0.0f, 1.0f);  // Flip the y-coordinate
-    glVertex2f(-1.0f, -1.0f);
+    glVertex2f(-halfWidth, -0.5f);
     glTexCoord2f(1.0f, 1.0f);  // Flip the y-coordinate
-    glVertex2f(1.0f, -1.0f);
+    glVertex2f(halfWidth, -0.5f);
     glTexCoord2f(1.0f, 0.0f);  // Flip the y-coordinate
-    glVertex2f(1.0f, 1.0f);
+    glVertex2f(halfWidth, 0.5f);
     glTexCoord2f(0.0f, 0.0f);  // Flip the y-coordinate
-    glVertex2f(-1.0f, 1.0f);
+    glVertex2f(-halfWidth, 0.5f);
     glEnd();
 
     glPopMatrix();  // Restore the previous transformation
@@ -165,7 +178,9 @@ void display() {
              -1.0f, 0.8f);
 
     drawText("Controls:", -1.0f, 0.7f);
-    drawText(("(x, y): " + std::to_string(pan_x) + ", " + std::to_string(pan_y)).c_str(), -1.0f, 0.65f);
+    drawText(("(x, y): " + std::to_string(pan_x) + ", " + std::to_string(pan_y))
+                 .c_str(),
+             -1.0f, 0.65f);
     drawText(("Zoom: " + std::to_string(zoom)).c_str(), -1.0f, 0.6f);
 
     glDisable(GL_TEXTURE_2D);
@@ -173,7 +188,13 @@ void display() {
 }
 
 int main(int argc, char** argv) {
-    std::ifstream file("rna/" + rna_name + ".rna");
+    std::ifstream file;
+    if (argc >= 1) {
+        std::string rna_name = argv[1];
+        file.open(rna_name);
+    } else {
+        file.open("rna/" + rna_name + ".rna");
+    }
 
     if (!file) {
         Logger::error("Failed to open the file.");

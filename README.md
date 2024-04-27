@@ -12,13 +12,13 @@ The image demonstrates the visualization of bonds in the RNA using our DP algori
 
 We ran the algorithm on 5 sequence, these are the results in comparison with ground truth:
 
-| RNA Name                                                         | RNA Length | Our algorithm (min loop len: 0) | Our algorithm (min loop len: 5) | Ground truth |
-|------------------------------------------------------------------|------------|---------------------------------|---------------------------------|--------------|
-| Homo sapiens (human) small nucleolar RNA, H/ACA box 91 (SNORA91) | 178        | 76                              | 64                              | 59           |
-| Homo sapiens (human) ABR antisense RNA 1 (ABR-AS1)               | 994        | 439                             | 364                             |              |
-| Homo sapiens (human) piR-61154                                   | 26         | 9                               | 8                               |              |
-| Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)          | 100        | 41                              | 37                              | 23           |
-| Thermus thermophilus 5S rRNA                                     | 122        | 53                              | 44                              |              |
+| RNA Name                                                         | RNA Length | Number of bonds (mll=0) | Number of bonds (mll=4) | Ground truth | Dot-bracket similarity (mll=4) |
+|------------------------------------------------------------------|------------|-------------------------|-------------------------|--------------|--------------------------------|
+| Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)          | 100        | 41                      | 37                      | 23           | 67%                            |
+| Homo sapiens (human) small nucleolar RNA, C/D box 43 (SNORD43)   | 62         | 25                      | 20                      | 2            | 38.71%                         |
+| Homo sapiens (human) microRNA hsa-mir-921 precursor              | 56         | 23                      | 19                      | 18           | 71.43%                         |
+| Homo sapiens U7 small nuclear RNA                                | 44         | 18                      | 13                      | 11           | 63.64%                         |
+| Homo sapiens (human) small nucleolar RNA, H/ACA box 81 (SNORA81) | 177        | 80                      | 63                      | 36           | 62.15%                         |
 
 ## Files
 
