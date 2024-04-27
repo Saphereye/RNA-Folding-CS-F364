@@ -1,4 +1,5 @@
 <map id="herrlog.hh" name="herrlog.hh">
 <area shape="rect" id="node1" title="Header file logging library." alt="" coords="5,5,93,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="8,80,91,107"/>
+<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="8,155,91,181"/>
+<area shape="rect" id="node3" href="$rna__folding_8hh.html" title="RNA folding algorithm implementation." alt="" coords="40,80,155,107"/>
 </map>

@@ -69,9 +69,20 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 Introduction</h1>
 <p>This project deals with finding the theoretical amount of bonds given an RNA sequence.</p>
-<p><img src="demo.png" alt="Demo of the program" style="width:25%;" class="inline"/></p>
-<p>The image demonstrates the visualization of bonds in the RNA using our DP algorithm.</p>
+<div style="text-align:center;"><img src="demo.png" alt="Demo of the program" style="width:30%;" class="inline"/></div><p>The image demonstrates the visualization of bonds in the RNA using our DP algorithm.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Brief Description of the Algorithm</h1>
+<p>This algorithm is a dynamic programming approach used for predicting the secondary structure of RNA sequences. It aims to maximize the number of non-crossing base pairs, which is based on the assumption that the more the base pairs, the more stable the RNA molecule is.</p>
+<p>The algorithm uses a 2D matrix to store the number of base pairs for every possible substring of the RNA sequence. The matrix is filled in a bottom-up manner, where each cell (i, j) represents the maximum number of base pairs that can be formed in the substring from index i to j.</p>
+<p>The algorithm considers three possibilities to fill each cell:</p>
+<ol type="1">
+<li>The number of base pairs if the current base pairs with the base at the end of the substring.</li>
+<li>The number of base pairs if the current base does not pair with any base.</li>
+<li>The maximum number of base pairs that can be formed by bifurcating the substring at any possible position.</li>
+</ol>
+<p>The cell is filled with the maximum of these three possibilities. The final solution is present in the cell (0, n-1), where n is the length of the RNA sequence.</p>
+<p>The algorithm also includes a traceback procedure to recover the optimal structure.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Comparison against ground truth</h1>
 <p>We ran the algorithm on 5 sequence, these are the results in comparison with ground truth:</p>
 <table class="markdownTable">
@@ -88,7 +99,23 @@ Comparison against ground truth</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Homo sapiens (human) small nucleolar RNA, H/ACA box 81 (SNORA81)   </td><td class="markdownTableBodyNone">177   </td><td class="markdownTableBodyNone">80   </td><td class="markdownTableBodyNone">63   </td><td class="markdownTableBodyNone">36   </td><td class="markdownTableBodyNone">62.15%   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Timing analysis</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">% time   </th><th class="markdownTableHeadNone">cumulative seconds   </th><th class="markdownTableHeadNone">self seconds   </th><th class="markdownTableHeadNone">calls   </th><th class="markdownTableHeadNone">ms/call   </th><th class="markdownTableHeadNone">total ms/call   </th><th class="markdownTableHeadNone">name    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">66.67   </td><td class="markdownTableBodyNone">0.02   </td><td class="markdownTableBodyNone">0.02   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">20.00   </td><td class="markdownTableBodyNone">20.00   </td><td class="markdownTableBodyNone">stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">33.33   </td><td class="markdownTableBodyNone">0.03   </td><td class="markdownTableBodyNone">0.01   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">5.00   </td><td class="markdownTableBodyNone">5.00   </td><td class="markdownTableBodyNone">create_matrix(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, int const&amp;)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">0.03   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">3418   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_replace(unsigned long, unsigned long, char const*, unsigned long)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">0.03   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">2854   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">0.00   </td><td class="markdownTableBodyNone">std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td><td class="markdownTableBodyNone">...   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Files</h1>
 <p>Here are the main files in the project:</p>
 <ul>

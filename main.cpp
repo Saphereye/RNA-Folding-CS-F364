@@ -9,8 +9,6 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
-#include <iostream>
-
 #include "rna_folding.hh"
 #include "herrlog.hh"
 

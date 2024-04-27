@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classLogType.html" title="The LogType class is used to define different types of logs using bit flags. Each log type is represe...">LogType</a> class is used to define different types of logs using bit flags. Each log type is represented by a different bit in a std::uint8_t value. This allows multiple log types to be combined using bitwise operations. </p>
+
+<p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00065">65</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af2d678da883263f63948cc8adb2cae2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2d678da883263f63948cc8adb2cae2b">&#9670;&nbsp;</a></span>LogType()</h2>
@@ -139,6 +141,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00093">93</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;: bitflag(initial_flag) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -177,6 +182,12 @@ Public Member Functions</h2></td></tr>
 <dd>
 false otherwise </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00112">112</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                              {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">bool</span><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(bitflag) &amp;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                 <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(other.bitflag));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a635be821591dc45fbdd0a3130b74149e"></a>
@@ -212,6 +223,13 @@ false otherwise </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classLogType.html" title="The LogType class is used to define different types of logs using bit flags. Each log type is represe...">LogType</a> </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00100">100</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                 {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classLogType.html#af2d678da883263f63948cc8adb2cae2b">LogType</a>((<span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(bitflag) |</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(other.bitflag)));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="ttc" id="aclassLogType_html_af2d678da883263f63948cc8adb2cae2b"><div class="ttname"><a href="classLogType.html#af2d678da883263f63948cc8adb2cae2b">LogType::LogType</a></div><div class="ttdeci">LogType(std::uint8_t initial_flag)</div><div class="ttdoc">Construct a new Log Type object. Allows implicit conversion from uint8_t. Thus allows assignments lik...</div><div class="ttdef"><b>Definition:</b> <a href="herrlog_8hh_source.html#l00093">herrlog.hh:93</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "herrlog.hh"
 
 /**
  * @brief Function to create the DP matrix for RNA folding
@@ -165,6 +166,6 @@ void dot_bracket_to_dot(const std::string& sequence, const std::string& structur
     // Run the neato program to generate a plot of the graph
     int result = system("neato -Tpng rna.dot -o rna.png");
     if (result != 0) {
-        std::cerr << "Failed to run the neato program." << std::endl;
+        Logger::error("Failed to run the neato program.");
     }
 }
