@@ -175,12 +175,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00293">293</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                        {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Debug) {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            log(<span class="stringliteral">&quot;DEBUG&quot;</span>, ascii_colors::bold_blue_color, format, args...);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a53c9b42bfce4d2314724807e33a56a15"></a>
@@ -237,13 +232,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00326">326</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                                        {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Error) {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            log(<span class="stringliteral">&quot;ERROR&quot;</span>, ascii_colors::bold_red_color, format, args...);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            exit(EXIT_FAILURE);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a7ece40aad10c27b720d334f375f04680"></a>
@@ -298,13 +287,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00357">357</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                                        {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Fatal) {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            log(<span class="stringliteral">&quot;FATAL&quot;</span>, ascii_colors::background_red_color, format, args...);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            abort();</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a1853eebd8acf02e28404907dbe8ac920"></a>
@@ -361,12 +344,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00309">309</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                                       {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Info) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            log(<span class="stringliteral">&quot; INFO&quot;</span>, ascii_colors::bold_green_color, format, args...);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a96d4a4378b54f6dcf671e3523dad5318"></a>
@@ -402,10 +380,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00245">245</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        Logger::datetime_format = datetime_format;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a03e74e76ce61704a36eca422ec0f75a7"></a>
@@ -441,10 +416,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00263">263</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                                          {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        Logger::is_color_output = is_color_output;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="aacb7a3549d53599184f6898e3180e5c1"></a>
@@ -480,10 +452,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00254">254</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                                             {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        Logger::output_buffer = &amp;output_buffer;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="afaeafb26a183a7b78f5db534c40a4ad0"></a>
@@ -519,25 +488,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00222">222</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        Logger::output_file_name = output_file_name;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        Logger::output_file = std::ofstream(Logger::output_file_name);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">if</span> (Logger::output_file.is_open()) {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            Logger::output_file.close();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        Logger::output_file.open(Logger::output_file_name);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">if</span> (!Logger::output_file.is_open()) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="classLogger.html#a53c9b42bfce4d2314724807e33a56a15">Logger::error</a>(</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="stringliteral">&quot;Failed to open {}&quot;</span>,</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                Logger::output_file_name);  <span class="comment">// Peak efficiency ᕦ(ò_óˇ)ᕤ</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        output_buffer = &amp;Logger::output_file;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        is_color_output = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
-<div class="ttc" id="aclassLogger_html_a53c9b42bfce4d2314724807e33a56a15"><div class="ttname"><a href="classLogger.html#a53c9b42bfce4d2314724807e33a56a15">Logger::error</a></div><div class="ttdeci">static void error(const char *format, Args... args)</div><div class="ttdoc">Logs messages of type error. Furthermore closes the output file and exits the program.</div><div class="ttdef"><b>Definition:</b> <a href="herrlog_8hh_source.html#l00326">herrlog.hh:326</a></div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a673b98ac5fd0eeaf37c3ff7400ed5fe6"></a>
@@ -573,8 +524,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00215">215</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{ Logger::log_type = log_type; }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a3e1727a15549295c7bc0f717f13237f0"></a>
@@ -631,12 +581,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00277">277</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                                        {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Trace) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            log(<span class="stringliteral">&quot;TRACE&quot;</span>, ascii_colors::bold_white_color, format, args...);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="af8b5827f89bf80ae598137a70b8b9c34"></a>
@@ -691,12 +636,7 @@ template&lt;typename... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="herrlog_8hh_source.html#l00342">342</a> of file <a class="el" href="herrlog_8hh_source.html">herrlog.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                       {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">if</span> (log_type &amp; LogType::Warn) {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            log(<span class="stringliteral">&quot; WARN&quot;</span>, ascii_colors::bold_yellow_color, format, args...);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ascii_5fcolors_29',['ascii_colors',['../namespaceascii__colors.html',1,'']]]
+  ['ascii_5fcolors_46',['ascii_colors',['../namespaceascii__colors.html',1,'']]]
 ];

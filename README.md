@@ -36,6 +36,8 @@ We ran the algorithm on 5 sequence, these are the results in comparison with gro
 | Homo sapiens U7 small nuclear RNA                                | 44         | 18                      | 13                      | 11           | 63.64%                         |
 | Homo sapiens (human) small nucleolar RNA, H/ACA box 81 (SNORA81) | 177        | 80                      | 63                      | 36           | 62.15%                         |
 
+Here, mll means **minimum loop length**, i.e. the minimum number of nucleotides skipped to make a bond.
+
 ## Timing analysis
 | % time | cumulative seconds | self seconds | calls | ms/call | total ms/call | name                                                                                                                                                  |
 | ------ | ------------------ | ------------ | ----- | ------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |

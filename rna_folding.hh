@@ -2,7 +2,6 @@
  * @file rna_folding.hh
  * @author Adarsh Das (saphereye.github.io)
  * @brief RNA folding algorithm implementation
- * @date 2024-04-23
  * 
  * @copyright Copyright (c) 2024
  * 

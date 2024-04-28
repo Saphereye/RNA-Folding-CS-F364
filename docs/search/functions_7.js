@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rna_5fscore_43',['rna_score',['../rna__folding_8hh.html#aba728743d99665e2f0537fecf490fee4',1,'rna_folding.hh']]]
+  ['operator_26_63',['operator&amp;',['../classLogType.html#af04cbbe99f1b9ae1a28d80d01f1d89b7',1,'LogType']]],
+  ['operator_7c_64',['operator|',['../classLogType.html#a635be821591dc45fbdd0a3130b74149e',1,'LogType']]]
 ];

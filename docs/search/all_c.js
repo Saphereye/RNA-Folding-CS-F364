@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['trace_23',['trace',['../classLogger.html#a3e1727a15549295c7bc0f717f13237f0',1,'Logger']]],
-  ['traceback_24',['traceback',['../rna__folding_8hh.html#a43b648f779f9d30470af268c20df13bf',1,'rna_folding.hh']]]
+  ['pan_5fx_22',['pan_x',['../main_8cpp.html#a0dd17cab04371dd81d268d8ff8a1ce66',1,'main.cpp']]],
+  ['pan_5fy_23',['pan_y',['../main_8cpp.html#a30f7f5796471aa997bd4a8d01fee8c39',1,'main.cpp']]]
 ];

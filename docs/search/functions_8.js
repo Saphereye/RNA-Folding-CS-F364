@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['set_5fdatetime_5fformat_44',['set_datetime_format',['../classLogger.html#a96d4a4378b54f6dcf671e3523dad5318',1,'Logger']]],
-  ['set_5fis_5fcolor_5foutput_45',['set_is_color_output',['../classLogger.html#a03e74e76ce61704a36eca422ec0f75a7',1,'Logger']]],
-  ['set_5foutput_5fbuffer_46',['set_output_buffer',['../classLogger.html#aacb7a3549d53599184f6898e3180e5c1',1,'Logger']]],
-  ['set_5foutput_5ffile_5fname_47',['set_output_file_name',['../classLogger.html#afaeafb26a183a7b78f5db534c40a4ad0',1,'Logger']]],
-  ['set_5ftype_48',['set_type',['../classLogger.html#a673b98ac5fd0eeaf37c3ff7400ed5fe6',1,'Logger']]]
+  ['reshape_65',['reshape',['../main_8cpp.html#a6819355374dd277347abd7c4235f0cd7',1,'main.cpp']]],
+  ['rna_5fscore_66',['rna_score',['../rna__folding_8hh.html#aba728743d99665e2f0537fecf490fee4',1,'rna_folding.hh']]]
 ];
