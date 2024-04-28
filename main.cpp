@@ -16,15 +16,7 @@
 #include "stb_image.h"
 
 //! Global variable to store rna name
-std::string rna_name =
-    // "Homo sapiens (human) RNA, U5D small nuclear 1 (RNU5D-1)";
-    "ACA box 91 (SNORA91)";
-// "Homo sapiens (human) small nucleolar RNA (SNORD43)";
-// "Homo sapiens (human) microRNA hsa-mir-921 precursor";
-// "Homo sapiens U7 small nuclear RNA";
-// "Homo sapiens (human) small nucleolar RNA (SNORA81)";
-// "Murari";
-// "Vansh";
+std::string rna_name;
 
 //! Number of nucleotides in input
 int number_of_nucleotides = 0;
@@ -52,6 +44,7 @@ int textureHeight;
  * @param filename
  */
 void loadTexture(const char* filename) {
+    Logger::trace("Loading the image ...");
     GLint maxTextureSize;
     glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
 
@@ -220,7 +213,7 @@ int main(int argc, char** argv) {
     std::string rna_sequence;
     std::getline(file, rna_sequence);
     number_of_nucleotides = rna_sequence.size();
-    const int minimal_loop_length = 4;
+    const int minimal_loop_length = 5;
 
     std::vector<std::pair<int, int>> fold;
     traceback(create_matrix(rna_sequence, minimal_loop_length), rna_sequence,

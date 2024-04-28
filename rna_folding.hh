@@ -128,10 +128,10 @@ std::string dot_write(const std::string& rna,
  */
 void dot_bracket_to_dot(const std::string& sequence, const std::string& structure) {
     std::string dot = "graph RNA {\n";
-    dot += "  bgcolor=\"transparent\";\n"; // Set the background color to transparent
-    dot += "  splines=polyline;\n"; // Use polyline splines for edges
-    dot += "  overlap=scale;\n"; // Use Voronoi-based technique to remove node overlaps
-    dot += "  size=\"50,50\";\n"; // Limit the size of the output image to 5x5 inches
+    dot += "  bgcolor=\"transparent\";\n";
+    dot += "  splines=polyline;\n";
+    dot += "  overlap=scale;\n";
+    dot += "  size=\"50,50\";\n";
     for (size_t i = 0; i < sequence.size(); ++i) {
         std::string color;
         switch (sequence[i]) {

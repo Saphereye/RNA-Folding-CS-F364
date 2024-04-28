@@ -152,10 +152,10 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="rna__folding_8hh.html#ab20ba9797d4bad3c1afe969ad923fe67">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="rna__folding_8hh.html#ab20ba9797d4bad3c1afe969ad923fe67">dot_bracket_to_dot</a>(<span class="keyword">const</span> std::string&amp; sequence, <span class="keyword">const</span> std::string&amp; structure) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::string dot = <span class="stringliteral">&quot;graph RNA {\n&quot;</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    dot += <span class="stringliteral">&quot;  bgcolor=\&quot;transparent\&quot;;\n&quot;</span>; <span class="comment">// Set the background color to transparent</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    dot += <span class="stringliteral">&quot;  splines=polyline;\n&quot;</span>; <span class="comment">// Use polyline splines for edges</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    dot += <span class="stringliteral">&quot;  overlap=scale;\n&quot;</span>; <span class="comment">// Use Voronoi-based technique to remove node overlaps</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    dot += <span class="stringliteral">&quot;  size=\&quot;50,50\&quot;;\n&quot;</span>; <span class="comment">// Limit the size of the output image to 5x5 inches</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    dot += <span class="stringliteral">&quot;  bgcolor=\&quot;transparent\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    dot += <span class="stringliteral">&quot;  splines=polyline;\n&quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    dot += <span class="stringliteral">&quot;  overlap=scale;\n&quot;</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    dot += <span class="stringliteral">&quot;  size=\&quot;50,50\&quot;;\n&quot;</span>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; sequence.size(); ++i) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::string color;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">switch</span> (sequence[i]) {</div>

@@ -3,35 +3,35 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 66.67      0.02     0.02        1    20.00    20.00  stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)
- 33.33      0.03     0.01        2     5.00     5.00  create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&)
-  0.00      0.03     0.00     3418     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
-  0.00      0.03     0.00     2854     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
-  0.00      0.03     0.00     1728     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
-  0.00      0.03     0.00      576     0.00     0.00  drawTexturedQuad()
-  0.00      0.03     0.00      576     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
-  0.00      0.03     0.00      576     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-  0.00      0.03     0.00      370     0.00     0.00  stbi__get16be(stbi__context*)
-  0.00      0.03     0.00      120     0.00     0.00  stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)
-  0.00      0.03     0.00      117     0.00     0.00  stbi__stdio_read(void*, char*, int)
-  0.00      0.03     0.00        8     0.00     0.00  void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&)
-  0.00      0.03     0.00        3     0.00     0.00  void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*)
-  0.00      0.03     0.00        2     0.00     0.00  stbi__get8(stbi__context*)
-  0.00      0.03     0.00        2     0.00     0.00  void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.00      0.03     0.00        2     0.00     0.00  void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.00      0.03     0.00        2     0.00     0.00  std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&)
-  0.00      0.03     0.00        1     0.00    20.00  loadTexture(char const*)
-  0.00      0.03     0.00        1     0.00     0.00  dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-  0.00      0.03     0.00        1     0.00     0.00  traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int)
-  0.00      0.03     0.00        1     0.00     0.00  stbi__do_zlib(stbi__zbuf*, char*, int, int, int)
-  0.00      0.03     0.00        1     0.00    20.00  stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int)
-  0.00      0.03     0.00        1     0.00    20.00  stbi__parse_png_file(stbi__png*, int, int)
-  0.00      0.03     0.00        1     0.00    20.00  stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int)
-  0.00      0.03     0.00        1     0.00     0.00  void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int)
-  0.00      0.03     0.00        1     0.00     0.00  void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int)
-  0.00      0.03     0.00        1     0.00     0.00  void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int)
-  0.00      0.03     0.00        1     0.00     0.00  void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long)
-  0.00      0.03     0.00        1     0.00    20.00  stbi_load
+ 50.00      0.02     0.02        1    20.00    20.00  stbi__do_zlib(stbi__zbuf*, char*, int, int, int)
+ 50.00      0.04     0.02        1    20.00    20.00  stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)
+  0.00      0.04     0.00     1121     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
+  0.00      0.04     0.00     1035     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+  0.00      0.04     0.00      430     0.00     0.00  stbi__get16be(stbi__context*)
+  0.00      0.04     0.00      291     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  0.00      0.04     0.00      137     0.00     0.00  stbi__stdio_read(void*, char*, int)
+  0.00      0.04     0.00      132     0.00     0.00  stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)
+  0.00      0.04     0.00       97     0.00     0.00  drawTexturedQuad()
+  0.00      0.04     0.00       97     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
+  0.00      0.04     0.00       97     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      0.04     0.00        8     0.00     0.00  void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&)
+  0.00      0.04     0.00        4     0.00     0.00  void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*)
+  0.00      0.04     0.00        2     0.00     0.00  create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&)
+  0.00      0.04     0.00        2     0.00     0.00  stbi__get8(stbi__context*)
+  0.00      0.04     0.00        2     0.00     0.00  void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      0.04     0.00        2     0.00     0.00  void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00      0.04     0.00        2     0.00     0.00  std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&)
+  0.00      0.04     0.00        1     0.00    40.00  loadTexture(char const*)
+  0.00      0.04     0.00        1     0.00     0.00  dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      0.04     0.00        1     0.00     0.00  traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int)
+  0.00      0.04     0.00        1     0.00    40.00  stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int)
+  0.00      0.04     0.00        1     0.00    40.00  stbi__parse_png_file(stbi__png*, int, int)
+  0.00      0.04     0.00        1     0.00    40.00  stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int)
+  0.00      0.04     0.00        1     0.00     0.00  void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int)
+  0.00      0.04     0.00        1     0.00     0.00  void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int)
+  0.00      0.04     0.00        1     0.00     0.00  void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int)
+  0.00      0.04     0.00        1     0.00     0.00  void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long)
+  0.00      0.04     0.00        1     0.00    40.00  stbi_load
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -69,143 +69,145 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 33.33% of 0.03 seconds
+granularity: each sample hit covers 4 byte(s) for 25.00% of 0.04 seconds
 
 index % time    self  children    called     name
+                0.00    0.04       1/1           loadTexture(char const*) [3]
+[1]    100.0    0.00    0.04       1         stbi_load [1]
+                0.00    0.04       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [6]
+                0.00    0.00       1/137         stbi__stdio_read(void*, char*, int) [61]
+-----------------------------------------------
                                                  <spontaneous>
-[1]    100.0    0.00    0.03                 main [1]
-                0.00    0.02       1/1           loadTexture(char const*) [3]
-                0.01    0.00       2/2           create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [8]
-                0.00    0.00       3/3           void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
-                0.00    0.00       2/2           void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
-                0.00    0.00       1/1           traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [73]
+[2]    100.0    0.00    0.04                 main [2]
+                0.00    0.04       1/1           loadTexture(char const*) [3]
+                0.00    0.00       3/4           void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
+                0.00    0.00       2/2           create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [68]
+                0.00    0.00       2/2           void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [71]
+                0.00    0.00       1/1           traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [74]
                 0.00    0.00       1/1           void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long) [78]
                 0.00    0.00       1/1           void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [76]
-                0.00    0.00       1/1           dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
+                0.00    0.00       1/1           dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [73]
 -----------------------------------------------
-                0.00    0.02       1/1           loadTexture(char const*) [3]
-[2]     66.7    0.00    0.02       1         stbi_load [2]
-                0.00    0.02       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
-                0.00    0.00       1/117         stbi__stdio_read(void*, char*, int) [65]
------------------------------------------------
-                0.00    0.02       1/1           main [1]
-[3]     66.7    0.00    0.02       1         loadTexture(char const*) [3]
-                0.00    0.02       1/1           stbi_load [2]
+                0.00    0.04       1/1           main [2]
+[3]    100.0    0.00    0.04       1         loadTexture(char const*) [3]
+                0.00    0.04       1/1           stbi_load [1]
+                0.00    0.00       1/4           void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
                 0.00    0.00       1/1           void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [77]
 -----------------------------------------------
-                0.00    0.02       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
-[4]     66.7    0.00    0.02       1         stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
-                0.00    0.02       1/1           stbi__parse_png_file(stbi__png*, int, int) [5]
+                0.00    0.04       1/1           stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [6]
+[4]    100.0    0.00    0.04       1         stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
+                0.00    0.04       1/1           stbi__parse_png_file(stbi__png*, int, int) [5]
 -----------------------------------------------
-                0.00    0.02       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
-[5]     66.7    0.00    0.02       1         stbi__parse_png_file(stbi__png*, int, int) [5]
-                0.02    0.00       1/1           stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [6]
-                0.00    0.00     370/370         stbi__get16be(stbi__context*) [63]
-                0.00    0.00      58/117         stbi__stdio_read(void*, char*, int) [65]
-                0.00    0.00       2/2           stbi__get8(stbi__context*) [68]
-                0.00    0.00       1/1           stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [74]
+                0.00    0.04       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
+[5]    100.0    0.00    0.04       1         stbi__parse_png_file(stbi__png*, int, int) [5]
+                0.02    0.00       1/1           stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [7]
+                0.02    0.00       1/1           stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [8]
+                0.00    0.00     430/430         stbi__get16be(stbi__context*) [59]
+                0.00    0.00      68/137         stbi__stdio_read(void*, char*, int) [61]
+                0.00    0.00       2/2           stbi__get8(stbi__context*) [69]
+-----------------------------------------------
+                0.00    0.04       1/1           stbi_load [1]
+[6]    100.0    0.00    0.04       1         stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [6]
+                0.00    0.04       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
 -----------------------------------------------
                 0.02    0.00       1/1           stbi__parse_png_file(stbi__png*, int, int) [5]
-[6]     66.7    0.02    0.00       1         stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [6]
+[7]     50.0    0.02    0.00       1         stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [7]
+                0.00    0.00     132/132         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [62]
 -----------------------------------------------
-                0.00    0.02       1/1           stbi_load [2]
-[7]     66.7    0.00    0.02       1         stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [7]
-                0.00    0.02       1/1           stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [4]
+                0.02    0.00       1/1           stbi__parse_png_file(stbi__png*, int, int) [5]
+[8]     50.0    0.02    0.00       1         stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [8]
 -----------------------------------------------
-                0.01    0.00       2/2           main [1]
-[8]     33.3    0.01    0.00       2         create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [8]
-                0.00    0.00       2/2           std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) [71]
+                0.00    0.00       1/1121        void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [77]
+                0.00    0.00       1/1121        void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long) [78]
+                0.00    0.00       1/1121        void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [76]
+                0.00    0.00       2/1121        void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
+                0.00    0.00       4/1121        void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
+                0.00    0.00     388/1121        display() [82]
+                0.00    0.00     724/1121        dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [73]
+[57]     0.0    0.00    0.00    1121         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00     300/1035        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
 -----------------------------------------------
-                0.00    0.00       1/3418        void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [77]
-                0.00    0.00       1/3418        void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long) [78]
-                0.00    0.00       1/3418        void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [76]
-                0.00    0.00       2/3418        void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [69]
-                0.00    0.00       3/3418        void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
-                0.00    0.00    1106/3418        dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
-                0.00    0.00    2304/3418        display() [82]
-[57]     0.0    0.00    0.00    3418         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
-                0.00    0.00    1736/2854        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
+                0.00    0.00     300/1035        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00     735/1035        dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [73]
+[58]     0.0    0.00    0.00    1035         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
 -----------------------------------------------
-                0.00    0.00    1118/2854        dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
-                0.00    0.00    1736/2854        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
-[58]     0.0    0.00    0.00    2854         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
+                0.00    0.00     430/430         stbi__parse_png_file(stbi__png*, int, int) [5]
+[59]     0.0    0.00    0.00     430         stbi__get16be(stbi__context*) [59]
+                0.00    0.00      68/137         stbi__stdio_read(void*, char*, int) [61]
 -----------------------------------------------
-                0.00    0.00    1728/1728        display() [82]
-[59]     0.0    0.00    0.00    1728         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [59]
+                0.00    0.00     291/291         display() [82]
+[60]     0.0    0.00    0.00     291         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [60]
 -----------------------------------------------
-                0.00    0.00     576/576         display() [82]
-[60]     0.0    0.00    0.00     576         drawTexturedQuad() [60]
+                0.00    0.00       1/137         stbi_load [1]
+                0.00    0.00      68/137         stbi__parse_png_file(stbi__png*, int, int) [5]
+                0.00    0.00      68/137         stbi__get16be(stbi__context*) [59]
+[61]     0.0    0.00    0.00     137         stbi__stdio_read(void*, char*, int) [61]
 -----------------------------------------------
-                0.00    0.00     576/576         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
-[61]     0.0    0.00    0.00     576         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) [61]
+                0.00    0.00     132/132         stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [7]
+[62]     0.0    0.00    0.00     132         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [62]
 -----------------------------------------------
-                0.00    0.00     576/576         display() [82]
-[62]     0.0    0.00    0.00     576         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [62]
-                0.00    0.00     576/576         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) [61]
+                0.00    0.00      97/97          display() [82]
+[63]     0.0    0.00    0.00      97         drawTexturedQuad() [63]
 -----------------------------------------------
-                0.00    0.00     370/370         stbi__parse_png_file(stbi__png*, int, int) [5]
-[63]     0.0    0.00    0.00     370         stbi__get16be(stbi__context*) [63]
-                0.00    0.00      58/117         stbi__stdio_read(void*, char*, int) [65]
+                0.00    0.00      97/97          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [65]
+[64]     0.0    0.00    0.00      97         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) [64]
 -----------------------------------------------
-                0.00    0.00     120/120         stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [74]
-[64]     0.0    0.00    0.00     120         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [64]
+                0.00    0.00      97/97          display() [82]
+[65]     0.0    0.00    0.00      97         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [65]
+                0.00    0.00      97/97          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long) [64]
 -----------------------------------------------
-                0.00    0.00       1/117         stbi_load [2]
-                0.00    0.00      58/117         stbi__parse_png_file(stbi__png*, int, int) [5]
-                0.00    0.00      58/117         stbi__get16be(stbi__context*) [63]
-[65]     0.0    0.00    0.00     117         stbi__stdio_read(void*, char*, int) [65]
------------------------------------------------
-                0.00    0.00       8/8           traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [73]
+                0.00    0.00       8/8           traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [74]
 [66]     0.0    0.00    0.00       8         void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&) [66]
 -----------------------------------------------
-                0.00    0.00       3/3           main [1]
-[67]     0.0    0.00    0.00       3         void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
-                0.00    0.00       3/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       1/4           loadTexture(char const*) [3]
+                0.00    0.00       3/4           main [2]
+[67]     0.0    0.00    0.00       4         void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [67]
+                0.00    0.00       4/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+-----------------------------------------------
+                0.00    0.00       2/2           main [2]
+[68]     0.0    0.00    0.00       2         create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [68]
+                0.00    0.00       2/2           std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) [72]
 -----------------------------------------------
                 0.00    0.00       2/2           stbi__parse_png_file(stbi__png*, int, int) [5]
-[68]     0.0    0.00    0.00       2         stbi__get8(stbi__context*) [68]
+[69]     0.0    0.00    0.00       2         stbi__get8(stbi__context*) [69]
 -----------------------------------------------
-                0.00    0.00       2/2           void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
-[69]     0.0    0.00    0.00       2         void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [69]
-                0.00    0.00       2/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       2/2           void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [71]
+[70]     0.0    0.00    0.00       2         void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
+                0.00    0.00       2/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
 -----------------------------------------------
-                0.00    0.00       2/2           main [1]
-[70]     0.0    0.00    0.00       2         void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
-                0.00    0.00       2/2           void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [69]
+                0.00    0.00       2/2           main [2]
+[71]     0.0    0.00    0.00       2         void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [71]
+                0.00    0.00       2/2           void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [70]
 -----------------------------------------------
-                0.00    0.00       2/2           create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [8]
-[71]     0.0    0.00    0.00       2         std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) [71]
+                0.00    0.00       2/2           create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [68]
+[72]     0.0    0.00    0.00       2         std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&) [72]
 -----------------------------------------------
-                0.00    0.00       1/1           main [1]
-[72]     0.0    0.00    0.00       1         dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [72]
-                0.00    0.00    1118/2854        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
-                0.00    0.00    1106/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       1/1           main [2]
+[73]     0.0    0.00    0.00       1         dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [73]
+                0.00    0.00     735/1035        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) [58]
+                0.00    0.00     724/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
 -----------------------------------------------
-                                 124             traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [73]
-                0.00    0.00       1/1           main [1]
-[73]     0.0    0.00    0.00       1+124     traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [73]
+                                  78             traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [74]
+                0.00    0.00       1/1           main [2]
+[74]     0.0    0.00    0.00       1+78      traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [74]
                 0.00    0.00       8/8           void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&) [66]
-                                 124             traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [73]
------------------------------------------------
-                0.00    0.00       1/1           stbi__parse_png_file(stbi__png*, int, int) [5]
-[74]     0.0    0.00    0.00       1         stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [74]
-                0.00    0.00     120/120         stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [64]
+                                  78             traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [74]
 -----------------------------------------------
                 0.00    0.00       1/1           void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [77]
 [75]     0.0    0.00    0.00       1         void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int) [75]
 -----------------------------------------------
-                0.00    0.00       1/1           main [1]
+                0.00    0.00       1/1           main [2]
 [76]     0.0    0.00    0.00       1         void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [76]
-                0.00    0.00       1/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       1/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
 -----------------------------------------------
                 0.00    0.00       1/1           loadTexture(char const*) [3]
 [77]     0.0    0.00    0.00       1         void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [77]
                 0.00    0.00       1/1           void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int) [75]
-                0.00    0.00       1/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       1/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
 -----------------------------------------------
-                0.00    0.00       1/1           main [1]
+                0.00    0.00       1/1           main [2]
 [78]     0.0    0.00    0.00       1         void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long) [78]
-                0.00    0.00       1/3418        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
+                0.00    0.00       1/1121        std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long) [57]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -298,13 +300,13 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [3] loadTexture(char const*) [5] stbi__parse_png_file(stbi__png*, int, int) [70] void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-   [8] create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [64] stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [59] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
-  [60] drawTexturedQuad()      [6] stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [71] std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&)
-  [72] dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [7] stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [66] void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&)
-  [73] traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [75] void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int) [57] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
-  [68] stbi__get8(stbi__context*) [67] void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [61] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
-  [74] stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [69] void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [58] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
-  [63] stbi__get16be(stbi__context*) [76] void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [62] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
-   [4] stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [77] void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [2] stbi_load
-  [65] stbi__stdio_read(void*, char*, int) [78] void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long)
+   [3] loadTexture(char const*) [5] stbi__parse_png_file(stbi__png*, int, int) [71] void Logger::info<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  [68] create_matrix(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int const&) [62] stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int) [60] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > __gnu_cxx::__to_xstring<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  [63] drawTexturedQuad()      [8] stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int) [72] std::vector<int, std::allocator<int> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > >(std::vector<int, std::allocator<int> >*, unsigned long, std::vector<int, std::allocator<int> > const&)
+  [73] dot_bracket_to_dot(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [6] stbi__load_and_postprocess_8bit(stbi__context*, int*, int*, int*, int) [66] void std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >::_M_realloc_insert<std::pair<int, int> >(__gnu_cxx::__normal_iterator<std::pair<int, int>*, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > > >, std::pair<int, int>&&)
+  [74] traceback(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::pair<int, int>, std::allocator<std::pair<int, int> > >&, int, int) [75] void Logger::print_to_stream<int, int>(std::ostream&, char const*, int, int) [57] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
+  [69] stbi__get8(stbi__context*) [67] void Logger::log<>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*) [64] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::reserve(unsigned long)
+   [7] stbi__do_zlib(stbi__zbuf*, char*, int, int, int) [70] void Logger::log<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [58] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+  [59] stbi__get16be(stbi__context*) [76] void Logger::log<int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int) [65] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+   [4] stbi__load_main(stbi__context*, int*, int*, int*, int, stbi__result_info*, int) [77] void Logger::log<int, int>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, int, int) [1] stbi_load
+  [61] stbi__stdio_read(void*, char*, int) [78] void Logger::log<unsigned long>(char const*, std::basic_string_view<char, std::char_traits<char> > const&, char const*, unsigned long)
