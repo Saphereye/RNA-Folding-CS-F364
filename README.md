@@ -53,3 +53,13 @@ Here are the main files in the project:
 
 - [main.cpp](main_8cpp.html)
 - [rna_folding.cpp](rna__folding_8hh.html)
+
+## Project group
+This project was made with the contributions of
+
+| **Name**             | **Id**        |
+|----------------------|---------------|
+| Adarsh Das           | 2021A7PS1511H |
+| Divyateja Pasupuleti | 2021A7PS0075H |
+| Kumarasamy Chelliah  | 2021A7PS0096H |
+| Manan Gupta          | 2021A7PS2091H |
