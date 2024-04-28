@@ -28,7 +28,7 @@ std::vector<std::vector<int>> create_matrix(
         for (size_t i = 0; i < rna_sequence.size() - k; i++) {
             size_t j = i + k;
 
-            if (j - i >= minimal_loop_length) {
+            if (j - i > minimal_loop_length) {
                 int rc = INT32_MIN;
                 for (size_t t = i; t < j; t++) {
                     rc = std::max(rc, dp[i][t] + dp[t + 1][j]);

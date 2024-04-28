@@ -213,7 +213,7 @@ int main(int argc, char** argv) {
     std::string rna_sequence;
     std::getline(file, rna_sequence);
     number_of_nucleotides = rna_sequence.size();
-    const int minimal_loop_length = 5;
+    const int minimal_loop_length = 4;
 
     std::vector<std::pair<int, int>> fold;
     traceback(create_matrix(rna_sequence, minimal_loop_length), rna_sequence,
