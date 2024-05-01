@@ -152,7 +152,7 @@ void dot_bracket_to_dot(const std::string& sequence, const std::string& structur
         } else if (structure[i] == ')') {
             int j = stack.back();
             stack.pop_back();
-            dot += "  " + std::to_string(j) + " -- " + std::to_string(i) + " [color=lightgrey, penwidth=10.0];\n";
+            dot += "  " + std::to_string(j) + " -- " + std::to_string(i) + " [color=purple, penwidth=10.0];\n";
         }
     }
     dot += "}\n";
