@@ -65,3 +65,5 @@ This project was done with the contributions of
 | Divyateja Pasupuleti | 2021A7PS0075H |
 | Kumarasamy Chelliah  | 2021A7PS0096H |
 | Manan Gupta          | 2021A7PS2091H |
+
+For the course CS F364 (Design & Analysis of Algorithms)
